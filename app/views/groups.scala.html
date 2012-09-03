@@ -1,0 +1,32 @@
+@(groupNames: java.util.List[String])
+
+@main("Group Title") {
+  
+  
+  <select size="7" id="groups">
+  
+	@for(groupName <- groupNames) {
+		<option>@groupName</option>
+	}
+	
+	</select>
+
+	<p>
+		And the lucky winner is:
+	<div id="loader" style="display:none; font-size:80px">
+		<img src="/assets/images/ajax-loader.gif" alt="ajax loader"/>
+	</div>
+	</p>
+	<p>
+		<div id="winner" style="display:none; font-size:80px">
+		</div>
+	</p>
+  <script type="text/javascript">
+	$(document).ready(function() {
+		selectGroup();
+	}
+	  );
+	
+  </script>
+
+}

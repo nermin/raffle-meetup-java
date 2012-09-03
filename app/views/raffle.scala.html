@@ -1,0 +1,11 @@
+@(memberForm: Form[Member])
+@import helper._
+
+@main("Raffle app") {
+  <h1>Raffle app</h1>
+  @helper.form(action = routes.Application.showGroups()) {
+	  @helper.inputText(memberForm("id"), '_label -> "Member Id", '_showConstraints -> false)
+	  @helper.inputPassword(memberForm("key"), '_label -> "Key", '_showConstraints -> false)
+	  <input type="submit">
+  }
+}
